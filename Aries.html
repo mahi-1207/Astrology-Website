@@ -1,64 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aries Horoscope - AstroSeek</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-image: url('images/Back.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aries Daily Horoscope</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #d32f2f;
+        }
+        .date {
+            font-size: 1.2em;
+            color: #555;
+        }
+        .horoscope {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #333;
+        }
+    </style>
 </head>
-<body class="bg-[#333333] text-[#D3D3D3]">
-  <!-- Navbar -->
-  <header class="bg-[#000000] shadow-lg">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 class="text-2xl font-bold text-[#C0C0C0]">AstroSeek</h1>
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="index.html" class="hover:text-white">Home</a></li>
-          <li><a href="#horoscope" class="hover:text-white">Horoscopes</a></li>
-          <li><a href="#features" class="hover:text-white">Zodiac Signs</a></li>
-          <li><a href="#about" class="hover:text-white">About</a></li>
-          <li><a href="#contact" class="hover:text-white">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="signin.html"><button class="bg-[#C0C0C0] text-black py-2 px-4 rounded hover:bg-white">Sign In</button></a>
+<body>
+    <div class="container">
+        <h1>Aries Daily Horoscope</h1>
+        <p class="date">February 17, 2025</p>
+        <p class="horoscope">Today is a day of new beginnings and bold moves. Trust your instincts and take charge. Opportunities are on the horizon, but they require confidence and determination.</p>
     </div>
-  </header>
-
-  <!-- Aries Horoscope Section -->
-  <section id="aries-horoscope" class="py-12 text-center">
-    <div class="container mx-auto max-w-2xl bg-black bg-opacity-70 p-8 rounded-lg shadow-lg">
-      <h2 class="text-4xl font-extrabold text-white">♈ Aries Horoscope</h2>
-      <p class="text-lg mt-4">Discover what the stars have in store for you today.</p>
-      <div class="mt-6">
-        <p id="daily-horoscope" class="text-lg font-semibold"></p>
-      </div>
-      <button onclick="generateHoroscope()" class="mt-4 bg-[#C0C0C0] text-black py-2 px-4 rounded hover:bg-white">Get Today's Horoscope</button>
-      <br>
-      <a href="index.html" class="inline-block mt-6 text-[#C0C0C0] hover:text-white">&#8592; Back to Home</a>
-    </div>
-  </section>
-
-  <script>
-    const horoscopes = [
-      "Today is a great day to take bold actions and chase your dreams.",
-      "An unexpected opportunity may arise—be ready to seize it!",
-      "Stay patient, and your efforts will soon pay off.",
-      "Your energy is magnetic today, and people are drawn to you.",
-      "A new connection may bring exciting changes to your life."
-    ];
-    
-    function generateHoroscope() {
-      const randomIndex = Math.floor(Math.random() * horoscopes.length);
-      document.getElementById("daily-horoscope").innerText = horoscopes[randomIndex];
-    }
-  </script>
 </body>
 </html>

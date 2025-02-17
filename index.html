@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroSeek - Astrology for You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-attachment: fixed;
+    }
+    .hover-darken:hover {
+      background-color: #1a1a1a !important;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      transform: scale(1.05); /* Pop-up effect */
+    }
+    #chatbot {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-[#333333] text-[#D3D3D3]">
+  <!-- Navbar -->
+  <header class="bg-[#000000] shadow-lg">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-[#C0C0C0]">AstroSeek</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#horoscope" class="hover:text-white">Horoscopes</a></li>
+          <li><a href="zodiac-signs.html" class="hover:text-white">Zodiac Signs</a></li>
+          <li><a href="#about" class="hover:text-white">About</a></li>
+          <li><a href="#contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="Signin.html"><button class="bg-[#C0C0C0] text-black py-2 px-4 rounded hover:bg-white">Sign In</button></a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+ <!-- Hero Section with Parallax Effect -->
+<section id="hero" class="relative h-screen flex items-center justify-center text-center text-white">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/Back.jpg'); background-attachment: fixed;"></div>
+  <div class="relative bg-black bg-opacity-60 p-10 rounded-lg">
+    <h2 class="text-5xl font-extrabold mb-4">Discover Your Future</h2>
+    <p class="text-lg mb-6 max-w-2xl">Unlock the secrets of the stars and explore your destiny. Get personalized horoscopes, zodiac insights, and compatibility readings.</p>
+    <button class="bg-[#C0C0C0] text-black py-3 px-6 rounded-lg text-lg hover:bg-white">Get Your Horoscope</button>
+  </div>
+</section>
+
+
+  <!-- Zodiac Features -->
+  <section id="features" class="py-12 bg-[#000000]">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-8 text-[#C0C0C0]">Explore the Zodiac Signs</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\leo.png.png" alt="Leo Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">LEO</h4>
+          <p>Confident, charismatic, and strong-willed.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\virgo.png" alt="Virgo Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">VIRGO</h4>
+          <p>Detail-oriented, practical, and analytical.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\libra.png" alt="Libra Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">LIBRA </h4>
+          <p>Charming, balanced, and diplomatic.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\scorpio.png" alt="Scorpio Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">SCORPIO </h4>
+          <p>Intense, passionate, and resourceful.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\sagittarius.png" alt="Sagittarius Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">SAGITTARIUS </h4>
+          <p>Adventurous, optimistic, and philosophical.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\capricorn.png" alt="Capricorn Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">CAPRICORN </h4>
+          <p>Disciplined, ambitious, and responsible.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\aquarius.png" alt="Aquarius Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">AQUARIUS </h4>
+          <p>Innovative, independent, and visionary.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\pisces.png" alt="Pisces Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">PISCES </h4>
+          <p>Empathetic, artistic, and dreamy.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\aries.png" alt="Aries Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">ARIES </h4>
+          <p>Bold, ambitious, and courageous.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\taurus.png" alt="Taurus Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">TAURUS </h4>
+          <p>Reliable, patient, and practical.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\gemini.png" alt="Gemini Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">GEMINI </h4>
+          <p>Versatile, curious, and communicative.</p>
+        </div>
+        <div class="bg-[#333333] p-6 rounded shadow-lg hover-darken">
+          <img src="zodiac images\cancer.png" alt="Cancer Symbol" class="w-16 h-16 mx-auto mb-4">
+          <h4 class="text-xl font-bold mb-2 text-white">CANCER </h4>
+          <p>Emotional, intuitive, and nurturing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="chatbot">
+    <div class="fixed bottom-6 right-6 flex flex-col items-end">
+      <button id="chatbot-btn" class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-2 rounded-full shadow-lg hover:scale-110 transition-transform">💬 Chat</button>
+      <div id="chatbot" class="hidden mt-2 w-80 bg-gray-900 text-white p-4 rounded-lg shadow-lg border border-indigo-500">
+        <div class="flex justify-between items-center mb-2 border-b pb-2">
+          <h4 class="text-lg font-bold">🔮 AstroSeek Chat</h4>
+          <button id="close-chatbot" class="text-red-400 hover:text-red-600 text-xl">&times;</button>
+        </div>
+        <div id="chatbox" class="h-48 overflow-y-auto border border-gray-700 p-2 bg-gray-800 rounded text-sm"></div>
+        <div class="mt-2 flex">
+          <input id="user-input" type="text" placeholder="Ask about astrology..." class="flex-1 p-2 bg-gray-700 text-white border border-gray-600 rounded-l focus:outline-none">
+          <button id="send-btn" class="bg-indigo-500 px-4 py-2 rounded-r hover:bg-indigo-600">➤</button>
+        </div>
+      </div>
+    </div>
+  
+    <script>
+      document.getElementById('chatbot-btn').addEventListener('click', function() {
+        document.getElementById('chatbot').classList.toggle('hidden');
+      });
+  
+      document.getElementById('close-chatbot').addEventListener('click', function() {
+        document.getElementById('chatbot').classList.add('hidden');
+      });
+  
+      document.getElementById('send-btn').addEventListener('click', function() {
+        let userInput = document.getElementById('user-input').value;
+        let chatbox = document.getElementById('chatbox');
+        if (userInput.trim() !== '') {
+          chatbox.innerHTML += `<div class='text-right'><strong>You:</strong> ${userInput}</div>`;
+          setTimeout(() => {
+            chatbox.innerHTML += `<div class='text-left'><strong>Bot:</strong> Sorry, I'm still learning astrology! 🌟</div>`;
+            chatbox.scrollTop = chatbox.scrollHeight;
+          }, 1000);
+          document.getElementById('user-input').value = '';
+        }
+      });
+    </script>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-[#000000] py-6">
+    <div class="container mx-auto text-center">
+      <p class="text-sm text-[#D3D3D3]">&copy; 2025 AstroSeek. All rights reserved.</p>
+      <p class="mt-2">
+        Follow us:
+        <a href="#" class="text-white hover:underline mx-1">Facebook</a> |
+        <a href="#" class="text-white hover:underline mx-1">Twitter</a> |
+        <a href="#" class="text-white hover:underline mx-1">Instagram</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroSeek - Horoscope</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body class="bg-[#333333] text-[#D3D3D3]">
+  <header class="bg-[#000000] shadow-lg p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-[#C0C0C0]">AstroSeek</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:text-white">Home</a></li>
+          <li><a href="#" class="hover:text-white">Horoscopes</a></li>
+          <li><a href="#" class="hover:text-white">Zodiac Signs</a></li>
+          <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="flex flex-col items-center mt-10">
+    <h2 class="text-3xl mb-4">Find Your Horoscope</h2>
+    <form id="horoscopeForm" class="bg-[#444] p-6 rounded-lg shadow-lg">
+      <label for="dob" class="block mb-2">Enter Your Birth Date:</label>
+      <input type="date" id="dob" class="p-2 rounded bg-gray-700 text-white mb-4 w-full">
+      <button type="button" onclick="findZodiac()" class="bg-indigo-500 text-white py-2 px-4 rounded">Find Horoscope</button>
+    </form>
+    
+    <div id="zodiacResult" class="mt-6 text-center hidden">
+      <h3 class="text-2xl font-bold">Your Zodiac Sign: <span id="zodiacSign"></span></h3>
+      <div class="mt-4">
+        <button onclick="getHoroscope('daily')" class="bg-blue-500 text-white py-2 px-4 rounded m-2">Daily</button>
+        <button onclick="getHoroscope('weekly')" class="bg-green-500 text-white py-2 px-4 rounded m-2">Weekly</button>
+        <button onclick="getHoroscope('monthly')" class="bg-purple-500 text-white py-2 px-4 rounded m-2">Monthly</button>
+      </div>
+      <p id="horoscopeText" class="mt-4 text-lg"></p>
+    </div>
+  </section>
+
+  <script>
+    async function getHoroscopeData(sign, type) {
+      try {
+        const response = await fetch(`https://aztro.sameerkumar.website/?sign=${sign}&day=${type}`, {
+          method: 'POST'
+        });
+        const data = await response.json();
+        return data.description;
+      } catch (error) {
+        console.error("Error fetching horoscope:", error);
+        return "Unable to fetch horoscope. Try again later.";
+      }
+    }
+
+    function findZodiac() {
+      const dob = document.getElementById('dob').value;
+      if (!dob) return alert('Please enter your birth date');
+      
+      const date = new Date(dob);
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      let zodiac = '';
+
+      if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) zodiac = 'aquarius';
+      else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) zodiac = 'pisces';
+      else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) zodiac = 'aries';
+      else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) zodiac = 'taurus';
+      else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) zodiac = 'gemini';
+      else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) zodiac = 'cancer';
+      else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) zodiac = 'leo';
+      else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) zodiac = 'virgo';
+      else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) zodiac = 'libra';
+      else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) zodiac = 'scorpio';
+      else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) zodiac = 'sagittarius';
+      else zodiac = 'capricorn';
+
+      document.getElementById('zodiacSign').innerText = zodiac;
+      document.getElementById('zodiacResult').classList.remove('hidden');
+    }
+
+    async function getHoroscope(type) {
+      const zodiac = document.getElementById('zodiacSign').innerText;
+      if (!zodiac) return;
+      
+      const horoscopeText = await getHoroscopeData(zodiac, type);
+      document.getElementById('horoscopeText').innerText = horoscopeText;
+    }
+  </script>
+</body>
+</html>
